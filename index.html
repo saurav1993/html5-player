@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HTML5 Player</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="audio-img">
+        <img id="cover" src="img/covers/cover1.jpg" alt="cover1">
+      </div>
+      <div id="audio-player">
+        <div id="audio-info">
+          <span id="artist">Linkin Park</span> - <span id="title">Hybrid Theory</span>
+        </div>
+        <input type="range" id="vol" value="5" min="0" max="10">
+        <br>
+        <div id="audio-buttons">
+          <button id="prev"></button>
+          <button id="play"></button>
+          <button id="pause"></button>
+          <button id="stop"></button>
+          <button id="next"></button>
+        </div>
+        <div class="clear-fix"></div>
+        <div id="tracker">
+          <div id="progressbar">
+            <span id="progress"></span>
+          </div>
+          <span id="duration">0.0</span>
+          <div class="clear-fix"></div>
+        </div>
+        <ul id="playlist">
+          <li song="1.mp3" artist="lorem" cover="cover1.jpg">1</li>
+          <li song="1.mp3" artist="lorem" cover="cover1.jpg">1</li>
+          <li song="1.mp3" artist="lorem" cover="cover1.jpg">1</li>
+
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
