@@ -1,0 +1,103 @@
+*{
+  margin:0px;
+  padding:0px;
+  border:0px;
+  outline: none;
+}
+
+body{
+  font-family: arial;
+  font-size: 13px;
+  line-height: 1.5em;
+  overflow-y: scroll;
+  color :#fff;
+}
+
+#container{
+  background: #333;
+  overflow:hidden;
+  margin:auto;
+  border:#666 solid 2px;
+  height:100vh;
+}
+
+header{
+  padding : 20px;
+  text-align: center;
+  border-bottom: #666 solid 2px;
+}
+header #tube{
+  color: #fff;
+  background: #E62117;
+  padding:2px 4px;
+  border-radius: 6px;
+}
+
+#search #search-bar{
+  display : block;
+  width : 90%;
+  height : 20px;
+  margin : 20px auto;
+  padding : 15px;
+  border: #666 solid 2px;
+  border-radius: 10px;
+}
+
+#search #search-btn{
+  display:block;
+  background: #666;
+  margin : auto;
+  padding : 5px 15px 8px 10px;
+  border : none;
+  border-radius: 20px;
+  color : #fff;
+}
+
+#search #search-icon{
+  font-size: 20px;
+}
+#recent {
+  margin-top: 20px;
+}
+.recent-song{
+  position: relative;
+  height : 50px;
+  border-bottom: #666 solid 1px;
+  padding-left : 10px;
+  padding-bottom:  20px;
+  padding-top:  20px;
+}
+#thumbnail{
+  display : inline;
+  float:left;
+  height : 50px;
+  width : 50px;
+  background: #fff;
+}
+#song-name{
+  display : inline;
+   position: absolute;
+  top: 20px;
+  float: left;
+  word-wrap: break-word;
+  margin-left: 10px;
+  width : 250px;
+  overflow: hidden;
+}
+#play-icon{
+  float : right;
+  font-size: 20px;
+  margin-right: 20px;
+  line-height: 50px;
+}
+.clear-fix{
+  clear : both;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}

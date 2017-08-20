@@ -1,0 +1,9 @@
+<div class="recent-song">
+    <img id ="thumbnail" src="'+ thumb +'" alt="">
+    <div id="info">
+      <div id="song-name">
+
+      </div>
+    </div>
+    <i id = "play-icon" class="fa fa-angle-right" aria-hidden="true"></i>
+</div>

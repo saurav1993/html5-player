@@ -94,7 +94,9 @@ $("#stop").click(function(){
   })
 //On audio end
 $(audio).bind("ended", function() {
-    alert('Video ended!');
+    console.log("fired");
+    $("#next").click();
+
 });
 //duration
 function showDuration(){

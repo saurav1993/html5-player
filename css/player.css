@@ -116,6 +116,7 @@ button#next{
   background:#666;
 }
 #progressbar{
+  position: relative;
   width: 80%;
   margin-left: 2%;
   margin-bottom: 20px;
@@ -125,6 +126,7 @@ button#next{
   float: left;
 }
 #progress{
+  position : absolute;
   background: url("../img/progress.png") no-repeat;
   height : 10px;
   display: inline-block;
