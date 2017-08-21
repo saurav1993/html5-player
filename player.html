@@ -1,47 +1,54 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HTML5 Player</title>
-    <link rel="stylesheet" href="css/player.css">
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>UI Design - Music Player</title>
 
-  </head>
-  <body>
-    <div id="container">
-      <div id="audio-img">
-        <img id="cover" src="" alt="cover1">
-      </div>
-      <div id="audio-player">
-        <div id="audio-info">
-          <span id="artist"></span> - <span id="title"></span>
-        </div>
-        <input type="range" id="vol" value="5" min="0" max="10">
-        <br>
-        <div id="audio-buttons">
-          <button id="prev"></button>
-          <button id="play"></button>
-          <button id="pause"></button>
-          <button id="stop"></button>
-          <button id="next"></button>
-        </div>
-        <div class="clear-fix"></div>
-        <div id="tracker">
-          <div id="progressbar">
-            <span id="progress"></span>
-          </div>
-          <span id="duration"></span>
-          <div class="clear-fix"></div>
-        </div>
-        <ul id="playlist">
-          <li song="1.mp3" artist="Likin Park" cover="cover1.jpg">1</li>
-          <li song="2.mp3" artist="lorem" cover="cover1.jpg">2</li>
-          <li song="3.mp3" artist="lorem" cover="cover1.jpg">3</li>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="css/player.css">
 
-        </ul>
+</head>
+
+<body>
+  <div class="container">
+  <div class="player">
+    <div class="player-head">
+      <img src="" alt="cover" class="song-cover">
+    </div>
+    <div class="player-body">
+      <img src="" alt="cover" class="song-cover">
+      <div class="album-info">
+        <span class="album-title">
+
+          </span>
+        <span class="player-controls">
+            <i id="back" class="fa fa-arrow-left" aria-hidden="true"></i>
+            <a id="download" href="" download><i class="fa fa-download" aria-hidden="true"></i></a>
+
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+          </span>
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/player.js"></script>
-  </body>
+    <div class="player-footer">
+      <!-- <div class="player-seekbar">
+        <span class="player-knot"></span>
+      </div> -->
+      <!-- <progress class="bar" value="0" max="1"></progress> -->
+      <div id="slider"></div>
+      <div class="song-controls">
+        <span class="current-duration">
+            00:00
+          </span><span class="play">
+            <i class="fa fa-play"></i>
+          </span><span class="total-duration">
+          </span>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ <script type="text/javascript" src="js/player.js"></script>
+</body>
 </html>

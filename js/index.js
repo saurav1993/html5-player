@@ -1,3 +1,12 @@
+
+$('body').on('click', '.recent-song', function (){
+        var id = $(this).attr("vid");
+        var thumbnail = $(this).children('#thumbnail').attr("src");
+        localStorage.setItem("playPresent",id);
+        localStorage.setItem("thumbnail",thumbnail);
+        document.location.href="player.html";
+});
+
 function search(){
   //Get Form input
   $("#recent").html("");
@@ -32,7 +41,7 @@ function getOutput(item){
   
   //Build our output:
   var output =
-  '<div class="recent-song">'+
+  '<div class="recent-song" vid="'+id+'">'+
       '<img id ="thumbnail" src="'+ thumb +'" alt="">'+
       '<div id="info">'+
       '<div id="song-name">'+title+'</div>'+
