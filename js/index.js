@@ -21,6 +21,7 @@ function search(){
         key : "AIzaSyCwA8LI3Ps7y76_LWgy7zDUKUwIbKKnpT0"},
         function(data){
           var nextPageToken = data.nextPageToken;
+          console.log(nextPageToken);
           var prevPageToken = data.prevPageToken;
           $.each(data.items,function(i,item){
             var output = getOutput(item);
