@@ -9,18 +9,30 @@
   </head>
   <body>
     <div id="container">
-      <header>
-        <h2>mp3-<span id="tube">Tube</span></h2>
-      </header>
-      <section id="search">
-        <input type="text" id="search-bar" placeholder="Search for a song..">
-        <button id="search-btn" onclick="search()"><i id="search-icon" class="fa fa-search" aria-hidden="true"></i> Search for Song</button>
-      </section>
+      <div id="fixed-top">
+        <header>
+          <h2>mp3-<span id="tube">Tube</span></h2>
+        </header>
+        <section id="search">
+          <input type="text" id="search-bar" placeholder="Search for a song..">
+          <button id="search-btn" onclick="search()"><i id="search-icon" class="fa fa-search" aria-hidden="true"></i> Search for Song</button>
+        </section>
+      </div>
+      <div class="spacer-top">
+        &nbsp;
+      </div>
       <section id="recent">
 
 
 
       </section>
+      <div id="fixed-bottom">
+        <p>Designed & Developed By Saurav Ganguly</p>
+      </div>
+      <div class="spacer-bottom">
+          <button id="prev-btn" onclick="prev()"><i id="search-icon" class="fa fa-angle-double-left" aria-hidden="true"></i></button>
+          <button id="next-btn" onclick="next()"><i id="search-icon" class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+      </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>

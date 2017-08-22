@@ -11,16 +11,35 @@ body{
   line-height: 1.5em;
   overflow-y: scroll;
   color :#fff;
-  background: #333;
+  background: #404040;
 }
 
 #container{
-  background: #333;
+  background: #404040;
   overflow:hidden;
   margin:auto;
-
   border-bottom: none;
 
+}
+#fixed-top{
+  position: fixed;
+  background: #333;
+  width : 100%;
+  z-index : 1;
+  padding-bottom: 20px;
+}
+#fixed-bottom{
+  text-align: center;
+  padding :10px 0;
+  position:fixed;
+   bottom:0px;
+   width:100%;
+   margin:0px;
+   background: #333;
+   z-index : 1;
+}
+.spacer-top{
+  height : 190px;
 }
 
 header{
@@ -47,7 +66,7 @@ header #tube{
 
 #search #search-btn{
   display:block;
-  background: #666;
+  background: #404040;
   margin : auto;
   padding : 5px 15px 8px 10px;
   border : none;
@@ -96,6 +115,27 @@ header #tube{
   margin-right: 20px;
   line-height: 50px;
 }
+#prev-btn{
+  float : left;
+  width : 20%;
+  padding : 5px;
+  background: #333;
+  border : none;
+  border-radius: 20px;
+  color : #fff;
+  margin-left: 10px;
+}
+#next-btn{
+  float : right;
+  width : 20%;
+  padding : 5px;
+  background: #333;
+  border : none;
+  border-radius: 20px;
+  color : #fff;
+  margin-right: 10px;
+  margin-bottom: 50px;
+}
 .clear-fix{
   clear : both;
 }
@@ -105,5 +145,5 @@ header #tube{
 }
 /* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-    background: #FF0000;
+    background: #404040;
 }

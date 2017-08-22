@@ -6,7 +6,8 @@ $('body').on('click', '.recent-song', function (){
         localStorage.setItem("thumbnail",thumbnail);
         document.location.href="player.html";
 });
-
+$("#prev-btn").hide();
+$("#next-btn").hide();
 function search(){
   //Get Form input
   $("#recent").html("");
@@ -18,11 +19,55 @@ function search(){
         part : 'snippet , id',
         q : q,
         type : 'video',
-        key : "AIzaSyCwA8LI3Ps7y76_LWgy7zDUKUwIbKKnpT0"},
+        key : "AIzaSyCwA8LI3Ps7y76_LWgy7zDUKUwIbKKnpT0",
+        maxResults : "10"
+      },
         function(data){
           var nextPageToken = data.nextPageToken;
-          console.log(nextPageToken);
           var prevPageToken = data.prevPageToken;
+          $.each(data.items,function(i,item){
+            var output = getOutput(item);
+            $("#recent").append(output);
+          });
+          if(prevPageToken){
+            $("#prev-btn").show();
+            $("#prev-btn").attr("prev",prevPageToken);
+            $("#prev-btn").attr("q",q);
+          }
+          if(nextPageToken){
+            $("#next-btn").show();
+            $("#next-btn").attr("next",nextPageToken);
+            $("#next-btn").attr("q",q);
+          }
+        }
+  )
+}
+function prev(){
+  $("#recent").html("");
+  $("#prev-btn").hide();
+  $("#next-btn").hide();
+  $.get(
+    "https://www.googleapis.com/youtube/v3/search",{
+        part : 'snippet , id',
+        q : $("#prev-btn").attr("q"),
+        type : 'video',
+        key : "AIzaSyCwA8LI3Ps7y76_LWgy7zDUKUwIbKKnpT0",
+        maxResults : "10",
+        pageToken : $("#prev-btn").attr("prev")
+      },
+        function(data){
+          var nextPageToken = data.nextPageToken;
+          var prevPageToken = data.prevPageToken;
+          if(prevPageToken){
+            $("#prev-btn").show();
+            $("#prev-btn").attr("prev",prevPageToken);
+            $("#prev-btn").attr("q",$("#prev-btn").attr("q"));
+          }
+          if(nextPageToken){
+            $("#next-btn").show();
+            $("#next-btn").attr("next",nextPageToken);
+            $("#next-btn").attr("q",$("#next-btn").attr("q"));
+          }
           $.each(data.items,function(i,item){
             var output = getOutput(item);
             $("#recent").append(output);
@@ -30,7 +75,39 @@ function search(){
         }
   )
 }
-
+function next(){
+  $("#recent").html("");
+  $("#prev-btn").hide();
+  $("#next-btn").hide();
+  $.get(
+    "https://www.googleapis.com/youtube/v3/search",{
+        part : 'snippet , id',
+        q : $("#next-btn").attr("q"),
+        type : 'video',
+        key : "AIzaSyCwA8LI3Ps7y76_LWgy7zDUKUwIbKKnpT0",
+        maxResults : "10",
+        pageToken : $("#next-btn").attr("next")
+      },
+        function(data){
+          var nextPageToken = data.nextPageToken;
+          var prevPageToken = data.prevPageToken;
+          if(prevPageToken){
+            $("#prev-btn").show();
+            $("#prev-btn").attr("prev",prevPageToken);
+            $("#prev-btn").attr("q",$("#next-btn").attr("q"));
+          }
+          if(nextPageToken){
+            $("#next-btn").show();
+            $("#next-btn").attr("next",nextPageToken);
+            $("#next-btn").attr("q",$("#next-btn").attr("q"));
+          }
+          $.each(data.items,function(i,item){
+            var output = getOutput(item);
+            $("#recent").append(output);
+          });
+        }
+  )
+}
 function getOutput(item){
   var id = item.id.videoId;
   var title = item.snippet.title;
