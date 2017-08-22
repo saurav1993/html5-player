@@ -12,6 +12,7 @@
       window.history.back();
     }
     audio = new Audio(data.link);
+    audio.vol = 1;
     console.log(data);
     $(".total-duration").text(totalDuration(data.length));
     $("#download").attr("href",data.link);
