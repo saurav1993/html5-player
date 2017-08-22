@@ -13,7 +13,6 @@
     }
     audio = new Audio(data.link);
     console.log(data);
-    play();
     $(".total-duration").text(totalDuration(data.length));
     $("#download").attr("href",data.link);
     $(".album-title").text(data.title);
