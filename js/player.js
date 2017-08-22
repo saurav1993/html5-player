@@ -92,9 +92,12 @@
       audio.currentTime = $( "#slider" ).slider("value");
   });
 
-$("#back").click(function(){
-  window.history.back();
-})
+  $("#back").click(function(){
+    window.history.back();
+  })
+  $("#refresh").click(function(){
+    location.reload();
+  })
 
 
 
